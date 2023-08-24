@@ -1,0 +1,424 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>多线程与高并发 | 奇妙妙妙屋</title><meta name="author" content="小H"><meta name="copyright" content="小H"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="多线程1.基础概念1.1进程 线程 协程&#x2F;纤程 (quasar) program app —》 QQ.exe QQ running —》进程 QQ running —》进程 进程—》一个程序进入内存就是进程，动态的概念，进程每次都会生成一个主(main)线程,分配资源的单位 线程—》一个进程里面的不同的执行路径，最小的执行任务的单元 纤程 —》CPU-Ring0-Ring1-Ring2-Ring3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多线程与高并发">
+<meta property="og:url" content="http://example.com/posts/dd62e7fd.html">
+<meta property="og:site_name" content="奇妙妙妙屋">
+<meta property="og:description" content="多线程1.基础概念1.1进程 线程 协程&#x2F;纤程 (quasar) program app —》 QQ.exe QQ running —》进程 QQ running —》进程 进程—》一个程序进入内存就是进程，动态的概念，进程每次都会生成一个主(main)线程,分配资源的单位 线程—》一个进程里面的不同的执行路径，最小的执行任务的单元 纤程 —》CPU-Ring0-Ring1-Ring2-Ring3">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2023-08-24T08:41:33.521Z">
+<meta property="article:modified_time" content="2023-08-24T08:43:12.943Z">
+<meta property="article:author" content="小H">
+<meta property="article:tag" content="奇妙,生活,博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/dd62e7fd.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#3b70fc"/><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/128.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/16.png"/><link rel="mask-icon" href="/img/siteicon/128.png" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '多线程与高并发',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-24 16:43:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="奇妙妙妙屋" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/index.html"><i class="fa-fw fas fa-home"></i><span> 追番</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="奇妙妙妙屋"><span class="site-name">奇妙妙妙屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/index.html"><i class="fa-fw fas fa-home"></i><span> 追番</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">多线程与高并发</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-24T08:41:33.521Z" title="发表于 2023-08-24 16:41:33">2023-08-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-24T08:43:12.943Z" title="更新于 2023-08-24 16:43:12">2023-08-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="多线程与高并发"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="1-基础概念"><a href="#1-基础概念" class="headerlink" title="1.基础概念"></a>1.基础概念</h2><h3 id="1-1进程-线程-协程-纤程-quasar"><a href="#1-1进程-线程-协程-纤程-quasar" class="headerlink" title="1.1进程 线程 协程/纤程 (quasar)"></a>1.1进程 线程 协程/纤程 (quasar)</h3><ul>
+<li>program app —》 QQ.exe</li>
+<li>QQ running —》进程</li>
+<li>QQ running —》进程</li>
+<li>进程—》一个程序进入内存就是进程，动态的概念，进程每次都会生成一个主(main)线程,分配资源的单位</li>
+<li>线程—》一个进程里面的不同的执行路径，最小的执行任务的单元</li>
+<li>纤程 —》CPU-Ring0-Ring1-Ring2-Ring3<ul>
+<li>Ring0-》内核态Ring3-》用户态</li>
+<li>内核调用/系统调用-线程的操作</li>
+<li>用户态启动线程<ul>
+<li>进入到内核态—保存用户态的线程</li>
+<li>用户态 不经过内核态的线程 —纤程 golang的go程</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2用户态"><a href="#1-2用户态" class="headerlink" title="1.2用户态"></a>1.2用户态</h3><ul>
+<li>int 0X80-128</li>
+<li>sysenter cpu 支持</li>
+<li>保存用户态线程<ul>
+<li>寄存器压栈</li>
+<li>进入syscall</li>
+<li>内核态返回eax</li>
+<li>恢复用户态现场</li>
+<li>用户程序继续执行</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-Sleep-Yield-Jion"><a href="#1-3-Sleep-Yield-Jion" class="headerlink" title="1.3 Sleep_Yield_Jion"></a>1.3 Sleep_Yield_Jion</h3><ul>
+<li>Sleep<ul>
+<li>使当前线程暂停多少毫秒</li>
+<li>调用后进入Waiting状态</li>
+<li>方法声明在Thread中</li>
+</ul>
+</li>
+<li>Yield<ul>
+<li>调用后进入Runnable状态</li>
+<li>让出CPU时间片,之后有可能其他线程获得执行权，也有可能这个线程继续执行</li>
+</ul>
+</li>
+<li>Jion<ul>
+<li>当A线程调用B线程的jion方法后，必须等到B线程执行完成后才能继续执行A线程</li>
+<li>可以保证线程的顺序执行</li>
+<li>只有当线程启动后调用jion方法才有意义</li>
+<li>使用wait()方法实现</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-4-线程的状态"><a href="#1-4-线程的状态" class="headerlink" title="1.4 线程的状态"></a>1.4 线程的状态</h3><p>​    <img src="../img/image-20230414203048850.png" alt="image-20230414203048850"></p>
+<ul>
+<li>New 新建状态<ul>
+<li>一个线程被创建,还没有开始运行的状态，即没有调用start()方法</li>
+</ul>
+</li>
+<li>Runnable 就绪状态 —— (Ready 准备状态)和(Running  运行状态)<ul>
+<li>一个线程准备就绪,随时可以运行的时候就进入了Runnable状态</li>
+<li>Runnable状态可以是实际正在运行的线程(Running  运行状态),也可以是随时可以运行的线程(Ready 准备状态)</li>
+<li>多线程环境下,每个线程都会被分配一个固定长度的CPU计算时间，每个线程运行一会儿就会停止让其他线程运行，这个停止就代表该线程在操作系统上被挂起，从Running状态进入到了Ready状态，进入了等待队列，只有这样才能让每个线程公平的运行。这些等待CPU和正在运行的线程就处于Runnable状态</li>
+</ul>
+</li>
+<li>Blocked 阻塞状态<ul>
+<li>例如一个线程在等待I/O资源,或者他要访问的被保护代码已经被其他线程锁住了（Synchronized 同步代码块），那么他就处于Blocked状态，这个线程所需要的资源到位后进入Runnable状态</li>
+</ul>
+</li>
+<li>Waitting  <ul>
+<li>TimedWaiting 有限期等待<ul>
+<li>无需被其他线程显示唤醒，在一定时间后由系统自动唤醒，以下方法会进入TimedWaiting 状态<ul>
+<li>Thread.sleep(sleeptime)</li>
+<li>Object.wait(timeout)</li>
+<li>Thread.join(timeout)</li>
+<li>LockSupport.parkNanos(timeout)</li>
+<li>LockSupport.parkUntil(timeout)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Waitting  无限期等待<ul>
+<li>如果一个线程在等待其他线程唤醒,那么他就处于Waiiting状态，以下方法会进入Waitting  状态<ul>
+<li>Object.wait()</li>
+<li>Thread.join()</li>
+<li>LockSupport.park()</li>
+</ul>
+</li>
+<li>一下方法可以将线程唤醒<ul>
+<li>Object.notify()</li>
+<li>Object.notifyAll()</li>
+<li>LockSupport.unpark()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Teminated 死亡状态<ul>
+<li>一个线程正常执行完毕或者意外失败，那么就会进入Teminated状态</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-5-Synchronized"><a href="#1-5-Synchronized" class="headerlink" title="1.5  Synchronized"></a>1.5  Synchronized</h3><p>脏读(dirtyRead)</p>
+<p><img src="../img/image-20230423105229181.png" alt="image-20230423105229181"></p>
+<p><img src="../img/image-20230423105952856.png" alt="image-20230423105952856"></p>
+<p>自旋锁：低级的排队,占用CPU时间</p>
+<p>synchronized：能够保持线程的可见性,原子性不能保证有序性</p>
+<p>synchronized本质是一把悲观锁</p>
+<h3 id="1-6-Volatile"><a href="#1-6-Volatile" class="headerlink" title="1.6 Volatile"></a>1.6 Volatile</h3><ul>
+<li>保证线程的可见性<ul>
+<li>MESI</li>
+<li>缓存一致性协议  </li>
+</ul>
+</li>
+<li>禁止指令重排序<ul>
+<li>DCL单例   Double Check Lock</li>
+</ul>
+</li>
+</ul>
+<p><img src="../img/image-20230426153825956.png" alt="image-20230426153825956"></p>
+<p>​        在类中线程有一个公共的堆内存,然后各自线程有着自己的工作内存,如果 当在<strong>flag</strong>中存在一个boolean变量,那么左右两边线程的工作内存会对其进行拷贝。如果左边的工作内存对其进行修改时为立即提交到工作内存,但是右边的更新工作内存中的变量时间就无法进行控制。</p>
+<p>volatile：能够保持线程的可见性，有序性不能保证线程原子性</p>
+<h3 id="1-7-CAS-无锁优化-自旋"><a href="#1-7-CAS-无锁优化-自旋" class="headerlink" title="1.7 CAS(无锁优化 自旋)"></a>1.7 CAS(无锁优化 自旋)</h3><ul>
+<li>Compare And Swap</li>
+<li><p>cas(V,Expected,NewValue)</p>
+<ul>
+<li>if v == E</li>
+<li>V =new </li>
+<li>otherwise try again or fail</li>
+<li>CPU原语支持</li>
+</ul>
+</li>
+<li><p>ABA问题   </p>
+<ul>
+<li>当原有值被其他线程改变时，再变回原有值</li>
+<li>设置版本号  Version </li>
+<li>如果基础类型，可以忽略不记</li>
+<li>引用类型 你的女朋友分手了 然后又复合 中间经历了别的女人</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-8-Unsafe"><a href="#1-8-Unsafe" class="headerlink" title="1.8 Unsafe"></a>1.8 Unsafe</h3><ul>
+<li>直接操作内存<ul>
+<li>allocateMemory putXX freeMemory pageSize</li>
+</ul>
+</li>
+<li>直接生成类实例<ul>
+<li>allocateInstance</li>
+</ul>
+</li>
+<li>直接操作类或实例变量<ul>
+<li>OjectFieldOffset</li>
+<li>getInt</li>
+<li>getObject</li>
+</ul>
+</li>
+<li>CAS相关操作<ul>
+<li>compareAndSwapObject Int Long</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-9-ReentrantLock"><a href="#1-9-ReentrantLock" class="headerlink" title="1.9  ReentrantLock"></a>1.9  ReentrantLock</h3><ul>
+<li>ReentrantLock 可以完全替代synchronized</li>
+<li>trylock 尝试去获得锁 </li>
+<li>lockinterupptibly</li>
+<li>还可以在公平锁和非公平锁中切换</li>
+</ul>
+<h3 id="1-10-CyclicBarrier"><a href="#1-10-CyclicBarrier" class="headerlink" title="1.10 CyclicBarrier"></a>1.10 CyclicBarrier</h3><ul>
+<li>其中有两个参数 第一个参数是条件 就是这个栅栏多少执行任务</li>
+<li>第二个参数 就是任务  满足第一个条件后的任务</li>
+</ul>
+<h3 id="1-11-Phaser-阶段上锁"><a href="#1-11-Phaser-阶段上锁" class="headerlink" title="1.11 Phaser 阶段上锁"></a>1.11 Phaser 阶段上锁</h3><h3 id="1-12-ReadWritLock-读写锁"><a href="#1-12-ReadWritLock-读写锁" class="headerlink" title="1.12 ReadWritLock 读写锁"></a>1.12 ReadWritLock 读写锁</h3><ul>
+<li>共享锁 读锁</li>
+<li>排它锁 写锁</li>
+</ul>
+<h3 id="1-13-Semaphore-信号灯"><a href="#1-13-Semaphore-信号灯" class="headerlink" title="1.13 Semaphore  信号灯"></a>1.13 Semaphore  信号灯</h3><ul>
+<li>限流</li>
+<li>默认是非公平</li>
+</ul>
+<h3 id="1-14-Exchanger"><a href="#1-14-Exchanger" class="headerlink" title="1.14 Exchanger"></a>1.14 Exchanger</h3><ul>
+<li>只能够两个线程之间</li>
+<li>Exchanger 中的exchange的方法是阻塞, 只有在Exchanger中交换之后线程才能够继续执行 </li>
+</ul>
+<h2 id="2-1-互联网三高"><a href="#2-1-互联网三高" class="headerlink" title="2.1 互联网三高"></a>2.1 互联网三高</h2><p> 高性能 高扩展 高可用</p>
+<ul>
+<li>高性能<ul>
+<li>响应(低延时)   响应是处理这个请求的时间</li>
+<li>吞吐(高吞吐量 高并发)   吞吐是在单位时间内能够发送的请求数</li>
+</ul>
+</li>
+<li>优化  amdahl （阿姆达尔）定律<ul>
+<li>要想显著加速整个系统,必须提升全系统中相同大的部分的速度</li>
+</ul>
+</li>
+<li>举例<ul>
+<li>集群 —吞吐</li>
+<li>负载均衡 —吞吐</li>
+<li>缓存 —响应</li>
+<li>JVM —响应</li>
+<li>分库分表 —吞吐/响应</li>
+<li>Tomcat 非阻塞协议 —响应</li>
+<li>MQ异步 —响应</li>
+<li>云原生 -k8s-动态压缩容-SpringCloud</li>
+</ul>
+</li>
+</ul>
+<h3 id="Java对象组成"><a href="#Java对象组成" class="headerlink" title="Java对象组成"></a>Java对象组成</h3><p>在HotSpot虚拟机中,真实的Java对象是分成三个部分：</p>
+<p><img src="../img/image-20230607081230397.png" alt="image-20230607081230397"></p>
+<ol>
+<li><p>对象头</p>
+<p>用于存储对象自身运行时数据,包括哈希值(hashcode)、类型、GC分代年龄、锁状态标志、线程持有的锁、偏向线程ID、偏向时间戳等。</p>
+</li>
+<li><p>实例数据</p>
+<p>用于存放类的数据信息,父类的信息，对象字段属性信息</p>
+</li>
+<li><p>对其填充</p>
+<p>在JVM中，要求对象占用内存的大小应该是8bit的倍数,这个信息是用来补齐8bit的</p>
+</li>
+</ol>
+<h3 id="JUC乐观锁"><a href="#JUC乐观锁" class="headerlink" title="JUC乐观锁"></a>JUC乐观锁</h3><ul>
+<li><p>乐观锁  自旋锁 无锁(无悲观锁) CAS</p>
+</li>
+<li><p>CAS   Compare And Swamp /   Compare And Set / Compare And Exchange</p>
+</li>
+<li><p>问题：</p>
+<ul>
+<li><p>ABA问题 基础类型可以忽略 引用类型不能 </p>
+</li>
+<li><p>解决 atomicStampedReference版本号  AtomicMarkableReference 布尔类型</p>
+</li>
+<li><p>CAS原子性问题</p>
+<ul>
+<li>CAS操作本身必须具备原子性</li>
+<li>底层是由一条指令来解决的  cmpxchg</li>
+<li>CAS操作cpu本身有指令支持 -cmpxchg不保障原子性</li>
+<li>lock -优先锁定 cache line 其次锁定北桥信号</li>
+</ul>
+</li>
+<li><p>是不是CAS一定就比悲观锁效率要高？</p>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><p>什么时候用CAS,什么时候用悲观锁？</p>
+<ul>
+<li>能用synchronized解决问题的,优先使用synchronized </li>
+</ul>
+</li>
+<li><p>JDK1.5之后,Synchronized内部有锁升级的过程,偏向锁-轻量级锁(自旋锁)-重量级锁(悲观排队锁)</p>
+<ul>
+<li>偏向锁<ul>
+<li>应用于第一个线程,偏向锁真实意义上不是一个锁是一个标签</li>
+<li>把第一个线程的id记录在markword的对象头上</li>
+</ul>
+</li>
+</ul>
+<p><img src="../img/image-20230607091123627.png" alt="image-20230607091123627"></p>
+</li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">小H</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/dd62e7fd.html">http://example.com/posts/dd62e7fd.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">奇妙妙妙屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/a4768904.html" title="JVM核心编程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">JVM核心编程</div></div></a></div><div class="next-post pull-right"><a href="/posts/0.html" title="JavaWeb教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JavaWeb教程</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小H</div><div class="author-info__description">个人博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">1.基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E8%BF%9B%E7%A8%8B-%E7%BA%BF%E7%A8%8B-%E5%8D%8F%E7%A8%8B-%E7%BA%A4%E7%A8%8B-quasar"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1进程 线程 协程&#x2F;纤程 (quasar)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2%E7%94%A8%E6%88%B7%E6%80%81"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2用户态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Sleep-Yield-Jion"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3 Sleep_Yield_Jion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.4 线程的状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-Synchronized"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.5  Synchronized</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-Volatile"><span class="toc-number">1.1.6.</span> <span class="toc-text">1.6 Volatile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-CAS-%E6%97%A0%E9%94%81%E4%BC%98%E5%8C%96-%E8%87%AA%E6%97%8B"><span class="toc-number">1.1.7.</span> <span class="toc-text">1.7 CAS(无锁优化 自旋)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-8-Unsafe"><span class="toc-number">1.1.8.</span> <span class="toc-text">1.8 Unsafe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-ReentrantLock"><span class="toc-number">1.1.9.</span> <span class="toc-text">1.9  ReentrantLock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-10-CyclicBarrier"><span class="toc-number">1.1.10.</span> <span class="toc-text">1.10 CyclicBarrier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-11-Phaser-%E9%98%B6%E6%AE%B5%E4%B8%8A%E9%94%81"><span class="toc-number">1.1.11.</span> <span class="toc-text">1.11 Phaser 阶段上锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-12-ReadWritLock-%E8%AF%BB%E5%86%99%E9%94%81"><span class="toc-number">1.1.12.</span> <span class="toc-text">1.12 ReadWritLock 读写锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-13-Semaphore-%E4%BF%A1%E5%8F%B7%E7%81%AF"><span class="toc-number">1.1.13.</span> <span class="toc-text">1.13 Semaphore  信号灯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-14-Exchanger"><span class="toc-number">1.1.14.</span> <span class="toc-text">1.14 Exchanger</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E4%BA%92%E8%81%94%E7%BD%91%E4%B8%89%E9%AB%98"><span class="toc-number">1.2.</span> <span class="toc-text">2.1 互联网三高</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java%E5%AF%B9%E8%B1%A1%E7%BB%84%E6%88%90"><span class="toc-number">1.2.1.</span> <span class="toc-text">Java对象组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JUC%E4%B9%90%E8%A7%82%E9%94%81"><span class="toc-number">1.2.2.</span> <span class="toc-text">JUC乐观锁</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/92377514.html" title="SpringMvc基础">SpringMvc基础</a><time datetime="2023-08-24T08:47:59.118Z" title="发表于 2023-08-24 16:47:59">2023-08-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/0.html" title="SpringBoot基础">SpringBoot基础</a><time datetime="2023-08-24T08:47:37.854Z" title="发表于 2023-08-24 16:47:37">2023-08-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/d607e27b.html" title="Spring基础">Spring基础</a><time datetime="2023-08-24T08:47:11.750Z" title="发表于 2023-08-24 16:47:11">2023-08-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/0.html" title="Redis教程">Redis教程</a><time datetime="2023-08-24T08:46:32.408Z" title="发表于 2023-08-24 16:46:32">2023-08-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/70c0ba43.html" title="Netty核心教程">Netty核心教程</a><time datetime="2023-08-24T08:45:51.875Z" title="发表于 2023-08-24 16:45:51">2023-08-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 小H</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="1708664797" data-server="tencent" data-type="playlist" data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true"hex></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"mode":{"use":"live2d-widget-model-koharu"},"display":{"position":"right","width":150,"height":300,"vOffset":220},"mobile":{"show":true,"scale":0.5},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
