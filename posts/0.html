@@ -1,17 +1,17 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Docker教程 | 奇妙妙妙屋</title><meta name="author" content="小H"><meta name="copyright" content="小H"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="DockerDocker 容器技术Docker最初是DotCloud公司在法国期间发起的一个公司内部项目，后来以Apache2.0授权协议开源，代码在Github上维护。 Docker是基于Google公司推出的Golang语言开发而来，基于Linux内核的Cgroups、NameSpace， 以及Union FS等技术，对进程进行封装隔离,属于操作系统层面的虚拟化技术。 由于隔离的进程独立于宿主">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Redis教程 | 奇妙妙妙屋</title><meta name="author" content="小H"><meta name="copyright" content="小H"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="RedisRedis是什么？Redis是一个开源(BSD许可)的,内存中的数据结构存储系统,它可以用作数据库,缓存和消息中间件.它支持多种类型的数据结构,如字符串(strings) ,散列(hashes) ,列表(lists),集合(sets) ,有序集合(sorted sets)与范围查询,bitmaps,hyperloglogs和地理空(geospatial) 索引半径查询。Redis 内置了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker教程">
+<meta property="og:title" content="Redis教程">
 <meta property="og:url" content="http://example.com/posts/0.html">
 <meta property="og:site_name" content="奇妙妙妙屋">
-<meta property="og:description" content="DockerDocker 容器技术Docker最初是DotCloud公司在法国期间发起的一个公司内部项目，后来以Apache2.0授权协议开源，代码在Github上维护。 Docker是基于Google公司推出的Golang语言开发而来，基于Linux内核的Cgroups、NameSpace， 以及Union FS等技术，对进程进行封装隔离,属于操作系统层面的虚拟化技术。 由于隔离的进程独立于宿主">
+<meta property="og:description" content="RedisRedis是什么？Redis是一个开源(BSD许可)的,内存中的数据结构存储系统,它可以用作数据库,缓存和消息中间件.它支持多种类型的数据结构,如字符串(strings) ,散列(hashes) ,列表(lists),集合(sets) ,有序集合(sorted sets)与范围查询,bitmaps,hyperloglogs和地理空(geospatial) 索引半径查询。Redis 内置了">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
-<meta property="article:published_time" content="2023-08-24T08:23:23.437Z">
-<meta property="article:modified_time" content="2023-08-24T14:20:06.033Z">
+<meta property="og:image" content="https://w.wallhaven.cc/full/x6/wallhaven-x6drvo.jpg">
+<meta property="article:published_time" content="2023-08-24T08:46:32.408Z">
+<meta property="article:modified_time" content="2023-08-24T14:39:25.796Z">
 <meta property="article:author" content="小H">
 <meta property="article:tag" content="奇妙,生活,博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/0.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#3b70fc"/><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/128.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/16.png"/><link rel="mask-icon" href="/img/siteicon/128.png" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<meta name="twitter:image" content="https://w.wallhaven.cc/full/x6/wallhaven-x6drvo.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/0.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#3b70fc"/><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/128.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/16.png"/><link rel="mask-icon" href="/img/siteicon/128.png" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
   localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
@@ -53,12 +53,12 @@
   },
   autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Docker教程',
+  title: 'Redis教程',
   isPost: true,
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-08-24 22:20:06'
+  postUpdate: '2023-08-24 22:39:25'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -163,325 +163,101 @@
     }
     detectApple()
     })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="奇妙妙妙屋" type="application/atom+xml">
-</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/index.html"><i class="fa-fw fas fa-home"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="奇妙妙妙屋"><span class="site-name">奇妙妙妙屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/index.html"><i class="fa-fw fas fa-home"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Docker教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-24T08:23:23.437Z" title="发表于 2023-08-24 16:23:23">2023-08-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-24T14:20:06.033Z" title="更新于 2023-08-24 22:20:06">2023-08-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Docker教程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><h2 id="Docker-容器技术"><a href="#Docker-容器技术" class="headerlink" title="Docker 容器技术"></a>Docker 容器技术</h2><p>Docker最初是DotCloud公司在法国期间发起的一个公司内部项目，后来以Apache2.0授权协议开源，代码在Github上维护。</p>
-<p>Docker是基于Google公司推出的Golang语言开发而来，基于Linux内核的Cgroups、NameSpace， 以及Union FS等技术，对进程进行封装隔离,属于操作系统层面的虚拟化技术。</p>
-<p>由于隔离的进程独立于宿主机和其他隔离的进程，也被称之为容器。</p>
-<p>最初的Docker是基于LXC的，后来去除LXC转 而使用自行开发的Libcontainer。</p>
-<p>Docker被定义为开源的容器引擎，可以方便的对容器进行管理。例如对镜像打包封装，引入Docker Registry对镜像统一管理。</p>
-<p>利用Docker可以实现开发，测试，生产环境的部署一致性， 极大的减少运维成本。</p>
-<h2 id="Docker-安装部署"><a href="#Docker-安装部署" class="headerlink" title="Docker 安装部署"></a>Docker 安装部署</h2><p><img src="../img/image-20230521162044493.png" alt="image-20230521162044493"> </p>
-<p><img src="../img/image-20230521162454819.png" alt="image-20230521162454819"></p>
-<p>docker最核心的组件</p>
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/index.html"><i class="fa-fw fas fa-home"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://w.wallhaven.cc/full/x6/wallhaven-x6drvo.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="奇妙妙妙屋"><span class="site-name">奇妙妙妙屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/index.html"><i class="fa-fw fas fa-home"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Redis教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-24T08:46:32.408Z" title="发表于 2023-08-24 16:46:32">2023-08-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-24T14:39:25.796Z" title="更新于 2023-08-24 22:39:25">2023-08-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Redis教程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="Redis是什么？"><a href="#Redis是什么？" class="headerlink" title="Redis是什么？"></a>Redis是什么？</h2><p>Redis是一个开源(BSD许可)的,内存中的数据结构存储系统,它可以用作数据库,缓存和消息中间件.它支持多种类型的数据结构,如字符串(strings) ,散列(hashes) ,列表(lists),集合(sets) ,有序集合(sorted sets)与范围查询,bitmaps,hyperloglogs和地理空(geospatial) 索引半径查询。Redis 内置了复制(replication) ，LUA脚本(Luascripting)，LRU驱动事件 (LRU eviction)，事务(transactions) 和不同级别的磁盘持久化(persistence)，并通过Redis哨兵(Sentinel) 和自动分区(Cluster) 提供高可用性(highavailability)。</p>
 <ul>
-<li>image镜像 ，构建容器（就是开发程序运行所需的环境，打包成镜像文件）</li>
-<li>Container，容器（应用程序跑在容器中）</li>
-<li>镜像仓库（dockerhub）（保存镜像文件，提供上传，下载镜像）类似于github</li>
+<li>Redis支持的数据类型<ul>
+<li>String  字符串</li>
+<li>List 列表</li>
+<li>Sets 集合</li>
+<li>Sorted Sets  有序集合</li>
+<li>Hash  散列</li>
 </ul>
-<p><strong>Images</strong><br>镜像是一个只读模板，用于创建容器，也可以通过Dockerfile文本描述镜像的内容。</p>
-<p>镜像的概念类似于编程开发里面向对象的类，从一个基类开始(基础镜像Base Image)</p>
-<p>构建容器的过程，就是运行镜像，生成容器实例。</p>
-<p>Docker镜像的描述文件是Dockerfile,包含了如下的指令</p>
+</li>
+</ul>
+<h2 id="关系型数据库与非关系型数据库"><a href="#关系型数据库与非关系型数据库" class="headerlink" title="关系型数据库与非关系型数据库"></a>关系型数据库与非关系型数据库</h2><ul>
+<li><p>关系型数据库</p>
 <ul>
-<li>FROM定义基础镜像</li>
-<li>MAINTAINER作者</li>
-<li>RUN运行Linux命令</li>
-<li>ADD添加文件/目录</li>
-<li>ENV环境变量</li>
-<li>CMD运行进程</li>
+<li>采用关系模型来组织模型的数据库,关系模型就是一个二维表格模型。一张二维表的表名就是关系,二维表中的一行就是一条记录，二维表中的一列就是一个字段</li>
+<li>优点<ul>
+<li>容易理解</li>
+<li>使用方便，通用的sql语言</li>
+<li>易于维护,丰富的完整性(实体完整性、参照完整性和用户定义的完整性)大大降低了数据冗余和数据不一致的概率</li>
 </ul>
-<p><strong>Container</strong><br>容器是一个镜像的运行实例，镜像&gt;容器。<br>创建容器的过程</p>
+</li>
+<li>缺点<ul>
+<li>磁盘I/O是并发的瓶颈</li>
+<li>海量数据查询效率低</li>
+<li>横向扩展困难，无法简单的通过添加硬件和服务节点来扩展性能和负载能立，当需要对数据库进行升级和扩展时，需要停机维护和数据迁移</li>
+<li>多表的关联查询以及复杂的数据分析类型的复杂sql查询，性能欠佳。因为要保证acid原则,必须按照三范式设计</li>
+</ul>
+</li>
+<li>数据库<ul>
+<li>Oracle，Sql Server，Mysql，DB2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>非关系型数据库</p>
 <ul>
-<li>获取镜像，如docker pu1l centos ，从镜像仓库拉取</li>
-<li>使用镜像创建容器</li>
-<li>分配文件系统，挂载-个读写层，在读写层加载镜像</li>
-<li>分配网络/网桥接口，创建一个网络接口，让容器和宿主机通信</li>
-<li>容器获取IP地址</li>
-<li>执行容器命令，如/bin/bash</li>
-<li>反馈容器启动结果。</li>
-</ul>
-<h2 id="Docker-常用指令"><a href="#Docker-常用指令" class="headerlink" title="Docker 常用指令"></a>Docker 常用指令</h2><ul>
-<li><strong>查看本地Docker镜像</strong> <ul>
-<li>docker images</li>
+<li>非关系型,分布式，一般不保证遵循ACID原则的数据库存储系统。键值对存储,结构不稳定</li>
+<li>优点<ul>
+<li>根据需要添加字段，不需要多表联查。仅需id取出对应的value</li>
+<li>适用于SNS（社会化网络服务软件。比如Facebook，微博）</li>
+<li>严格上讲不是一种数据库,而是一种数据结构化存储方法的集合</li>
 </ul>
 </li>
-<li><strong>下载Docker镜像</strong> <ul>
-<li>docker pull  镜像名:版本号</li>
+<li>缺点<ul>
+<li>只适合存储一些较为简单的数据</li>
+<li>不适合复杂查询的数据</li>
+<li>不适合持久存储海量数据</li>
 </ul>
 </li>
-<li><strong>查看DOcker镜像的信息</strong><ul>
-<li>docker info | grep Root</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>提示  grep 是字符串匹配 只有 Root才被查找出来</p>
-</blockquote>
-<ul>
-<li><strong>登录 docker hub(docker仓库)</strong> <ul>
-<li>docker login hub.docker.com -u <strong> - p  *</strong></li>
-</ul>
-</li>
-<li><strong>制作镜像</strong>  <ul>
-<li>docker bulid -t  镜像名:版本号</li>
-</ul>
-</li>
-<li><strong>push镜像(push)</strong><ul>
-<li>docker push   镜像名:版本号</li>
-</ul>
-</li>
-<li><strong>删除镜像</strong><ul>
-<li>docker rmi  #imagesName#</li>
-</ul>
-</li>
-<li><strong>运行容器</strong><ul>
-<li>docker run —name  镜像名 -it —rm -p 9080:80  容器名 bash</li>
-<li>docker run -d 容器名</li>
+<li>数据库<ul>
+<li>K-V: Redis,Memcache</li>
+<li>文档：MonggoDB</li>
+<li>搜索：Elasticsearch,Solr</li>
+<li>可扩展性分布式：HBase</li>
 </ul>
 </li>
 </ul>
-<blockquote>
-<p>-it  表示开启一个可交互式的终端</p>
-<p>—rm 表示关闭镜像时自动删除镜像记录信息</p>
-<p>-p 是端口映射将容器内的端口映射到宿主机的对应端口上</p>
-<p>bash 表示进入docker后执行的命令</p>
-</blockquote>
-<ul>
-<li><strong>进入容器</strong><blockquote>
-<p>docker exec -it 容器名 bash</p>
-</blockquote>
 </li>
-<li><strong>查看容器</strong><blockquote>
-<p>docker ps</p>
-</blockquote>
-</li>
-<li><strong>删除容器</strong><blockquote>
-<p>docker rm 容器名<br>docker rm 容器ID</p>
-</blockquote>
-</li>
-<li><strong>Volums 的使用</strong><ul>
-<li>把宿主机的目录映射到docker容器里面，docker里面的程序能够使用宿主机的文件系统，这样docker容器一旦销毁了,数据还会保存在宿主机的文件系统里面</li>
-<li>Volume映射可使用 -v来实现<blockquote>
-<p>docker run -it —rm —name 容器名 -v  /root/training/nginx/volumes:/usr/share/nginx/share/nginx/html:rw -p 9081:80 容器名:版本号</p>
-</blockquote>
+<li><p>比较</p>
+<p>| 内容       | 关系型数据库                   | 非关系型数据库                   |<br>| ————— | ——————————————— | ———————————————— |<br>| 成本       | 有些数据库需要收费(Orcale)     | 基本都是开源的、免费的           |<br>| 查询数据   | 存储于硬盘中，速度慢           | 数据存于缓存中，内存中，速度快   |<br>| 存储格式   | 只支持基础类型                 | K-V，文档，图片等                |<br>| 扩展性     | 有多表查询机制，扩展困难       | 数据之间没有耦合，容易扩展       |<br>| 持久性     | 适用持久存储，海量存储         | 不适用持久存储，海量存储         |<br>| 数据一致性 | 事务能力强，强调数据的强一致性 | 事务能力弱，强调数据的最终一致性 |</p>
 </li>
 </ul>
-</li>
-<li><strong>docker 端口映射</strong><ul>
-<li>容器里面端口映射到宿主机,让外面能够访问到</li>
-<li>端口映射可使用 -p、-P来实现<blockquote>
-<p>docker run —name 容器名 -it —rm -p 9080:80 容器名:版本号</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><strong>显示docker镜像的id</strong><blockquote>
-<p>docker images -q</p>
-</blockquote>
-</li>
-<li><strong>格式化显示镜像</strong><blockquote>
-<p>docker images —format “{ {.ID} }—{ {.Repository} }”</p>
-</blockquote>
-</li>
-<li><strong>表格形式显示镜像</strong><blockquote>
-<p>‘docker images —format “table  { {.ID} } \t { {.Repository} }”</p>
-</blockquote>
-</li>
-<li><strong>批量删除镜像</strong><blockquote>
-<p>docker rmi  ’docker images -aq‘</p>
-</blockquote>
-</li>
-<li><strong>批量删除容器</strong><blockquote>
-<p>docker rm ‘docker ps -aq’</p>
-</blockquote>
-</li>
-<li>提交容器为新镜像<blockquote>
-<p>docker commit</p>
-</blockquote>
-</li>
-<li>导出镜像的命令<blockquote>
-<p>docker image save 容器名:版本号 &gt;  路径</p>
-</blockquote>
-</li>
-<li>导入镜像的命令<blockquote>
-<p>docker image load  -i 路径</p>
-</blockquote>
-</li>
-<li>查看docker完整信息<blockquote>
-<p>docker image  inspect   镜像id</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="Dockerfile的参数"><a href="#Dockerfile的参数" class="headerlink" title="Dockerfile的参数"></a>Dockerfile的参数</h2><ul>
-<li><strong>FROM</strong><ul>
-<li>功能为指定基础镜像</li>
-<li>可以通过hub.docker.com去寻找自己需要的基础镜像</li>
-<li>FROM <image>[:TagName]</li>
-</ul>
-</li>
-<li><strong>MAINTAINER</strong><name><ul>
-<li>指定作者</li>
-</ul>
-</li>
-<li><p><strong>ARG</strong></p>
-<ul>
-<li>设置变量命令，ARG命令定义了一个变量,在docker build创建镜像的时候,使用 —build -arg<blockquote>
-<p>‘<varname> =<value>来指定参数</p>
-</blockquote>
-</li>
-<li><dest>路径的填写可以是容器内的绝对路径,也可以是相对于工作目录的相对路径</li>
-<li><src>可以是一个本地文件或者是一个本地压缩文件，还可以是一个url</li>
-<li>ARG<name>[=<default value>]</li>
-</ul>
-</li>
-<li><p><strong>ADD</strong></p>
-<ul>
-<li>把文件复制到镜像中</li>
-<li>ADD  <src> <dest></li>
-<li>注意: <src>可以是文件,也可以是一个url,那么ADD就类似于wget命令</li>
-</ul>
-</li>
-<li><strong>COPY</strong> <ul>
-<li>一个复制命令,COPY和ADD的区别在于<src>只能是本地文件,其他用法一致</li>
-<li>COPY<src><dest></li>
-</ul>
-</li>
-<li><strong>RUN</strong><ul>
-<li>运行指定的命令</li>
-<li>RUN<shell command></li>
-<li>注意:多行命令不要写多个RUN,原因是Dockerfile中每一个指令都会建立一层,可以用&amp;&amp;连接多个命令 </li>
-</ul>
-</li>
-<li><strong>WORKDIR</strong><ul>
-<li>设置工作目录</li>
-<li>WORKDIR&lt;/path/to/workdir&gt;</li>
-</ul>
-</li>
-<li><strong>CMD</strong><ul>
-<li>容器启动时要运行的命令</li>
-<li>CMD<commond></li>
-</ul>
-</li>
-<li><strong>ENTRYPOINT</strong><ul>
-<li>ENTRYPOINT[“executable”,”param1”,”param2”]</li>
-</ul>
-</li>
-<li><strong>ENV</strong><ul>
-<li>设置环境变量</li>
-<li>ENV<key><value></li>
-</ul>
-</li>
-<li><strong>EXPOSE</strong><ul>
-<li>暴露容器运行时的监听端口给外部,但是EXPOSES并不会使容器访问主机的端口</li>
-<li>如果想使得容器与主机的端口有映射关系,必须在容器启动的时候加上 -P或者-p参数</li>
-<li>EXPOSE<PortNum></li>
-</ul>
-</li>
-<li><strong>VOLUME</strong><ul>
-<li>可实现挂载功能,可以将内地文件夹或者其他容器中的文件夹挂载到这个容器中</li>
-<li>VOLUME[“/dir”]</li>
-</ul>
-</li>
-<li><strong>USER</strong><ul>
-<li>设置启动容器的用户,可以是用户名或者UID</li>
-<li>USER<UID|UserName></li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>提示</p>
-</blockquote>
-<p>docker version 服务端不出现</p>
-<ul>
-<li>第一步：sudo gpasswd -a username docker  #将普通用户username加入到docker组中，username这个字段也可以直接换成$USER。</li>
-<li>第二步：newgrp  docker  #更新docker组</li>
-<li>第三步：再执行你报错的命令，此时就不会报错 </li>
-</ul>
-<h2 id="Dockerfile的使用"><a href="#Dockerfile的使用" class="headerlink" title="Dockerfile的使用"></a>Dockerfile的使用</h2><p>FROM 这个镜像的妈妈是谁? (指定基础镜像)</p>
-<p>MAINTAINER 告诉别人,谁负责养它? (指定维护者信息,可以没有)</p>
-<p>RUN 你想让它干啥 (在命令前面加上RUN即可)</p>
-<p>WORKDIR 我是cd,今天刚化了妆 (设置当前工作目录)</p>
-<p>VOLUME 给它一个存放行李的地方(设置卷,挂载主机目录)</p>
-<h6 style="color:red;">容器在运行时，应该保证在存储层不写入任何数据,运行在容器内产生的数据,我们推荐是挂载,写入到宿主机，进行维护</h6>
+<h2 id="Redis-cli操作Redis"><a href="#Redis-cli操作Redis" class="headerlink" title="Redis-cli操作Redis"></a>Redis-cli操作Redis</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.lettuce<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lettuce-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 style="color:red">操作String</h3>
 
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mount /mnt</span></span><br><span class="line"><span class="comment">#将容器内的/data文件夹,在容器运行时,该目录自动挂载为匿名卷,任何向该目录中写入数据的操作,都不会被容器记录,保证的容器存储层无状态理念</span></span><br><span class="line"><span class="keyword">VOLUME</span><span class="language-bash"> /data  </span></span><br></pre></td></tr></table></figure>
-<ol>
-<li>容器数据挂载的方式，通过dockerfile,指定VOLUME目录</li>
-<li>通过docker run -v 参数,直接设置需要映射挂载的目录</li>
-</ol>
-<p>EXPOSE 他要打开的门是啥(指定对外的端口)</p>
-<p>CMD 奔跑吧,兄弟！ （指定容器启动后的要干的事情） </p>
-<p>用法,注意是双引号</p>
-<p>CMD[“参数1”,”参数2”]</p>
-<p>在指定了entrypoint指定后,用CMD指定的具体参数</p>
-<p>docker不是虚拟机,容器就是一个进程,既然是进程,那么程序在启动的时候需要指定些运行参数，这就是CMD指令作用</p>
-<h1 id="例"><a href="#例" class="headerlink" title="例:"></a>例:</h1><p>centos镜像默认的CMD是/bin/bash,直接docker  run -it centos会直接进入bash解释器。</p>
-<p>也可以启动容器时候,指定参数。 docker run -it centos cat /etc/os-releasea</p>
-<p>CMD运行shell命令,也会被转化为shell形式</p>
-<h1 id="例-1"><a href="#例-1" class="headerlink" title="例:"></a>例:</h1><p>CMD echo $PATH会被转化为  CMD[“sh”,”-c”,”echo”,”$PATH”]</p>
-<p>ADD 给她点创业资金(COPY文件,会自动解压)</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">特性和COPY基本一致,不过多了些功能</span><br><span class="line">1.源文件是一个URL,此时docker引擎会下载该链接,放入目标路径,且权限自动设置为600，若这不是期望结果，还得增加一层RUN指令进行</span><br><span class="line">2.源文件是一个URL，且是一个压缩包，不会自动解压，也得单独用RUN指定解压</span><br><span class="line">3.源文件是一个压缩文件，且是gzip，bzip2，xz，tar情况，ADD指令会自动解压该文件到目标路径</span><br></pre></td></tr></table></figure>
-<p>dockerfile其他指令:</p>
-<p>COPY 复制文件</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">#</span>copy指定从宿主机复制文件/目录到新的一层镜像内</span><br><span class="line">如</span><br><span class="line">copy chaoge.py  /home/</span><br><span class="line"><span class="params">#</span>支持多个文件,以及通配符形式复制,语法要满足Golang的filepath.Match</span><br><span class="line">copy chaoge* /tmp/cc?.txt. /home/</span><br><span class="line"><span class="params">#</span>COPY指定能够保留源文件的元数据,如权限,访问时间等等,这点很重要</span><br></pre></td></tr></table></figure>
-<h1 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h1><p>Dockerfile官方更为推荐使用COPY,ADD包含了更多复杂的功能,且ADD会使构建缓存失效,导致镜像构建缓慢</p>
-<p>ENV 环境变量</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ENV</span> NAME=<span class="string">&quot;hwx&quot;</span></span><br><span class="line"><span class="keyword">ENV</span> AGE=<span class="string">&quot;18&quot;</span></span><br><span class="line"><span class="keyword">ENV</span> MYSQL_VERSION=<span class="number">5.6</span></span><br><span class="line"><span class="comment">#后续所有的操作,通过$NAME就可以直接获取变量值了,维护dockerfile脚本时更友好,方便 ADD COPY EXPOSE</span></span><br></pre></td></tr></table></figure>
-<h1 id="提示：-1"><a href="#提示：-1" class="headerlink" title="提示："></a>提示：</h1><p>ARG和ENV一样 设置环境变量</p>
-<p>区别在于:</p>
-<p>ENV 无论是在镜像构建时,还是容器运行,该变量都可以使用</p>
-<p>ARG只是用于构建镜像需要设置的变量,容器运行时就消失了</p>
-<p>ENTRYPOINT 容器启动后执行的命令</p>
-<ul>
-<li>和RUN指令一样,分为两种格式<ul>
-<li>exec</li>
-<li>shell</li>
-</ul>
-</li>
-</ul>
-<p>作用和CMD一样，都是在指定容器启动程序以及参数。</p>
-<p>当指定了ENTRYPOINT之后,CMD指令的语义就有了变化,而是把CMD的内容当作参数传递给ENTRYPOINT指令。</p>
-<h2 id="Dockerfile的底层原理"><a href="#Dockerfile的底层原理" class="headerlink" title="Dockerfile的底层原理"></a>Dockerfile的底层原理</h2><p>镜像是多层存储,每一层在前一层的基础上进行修改;</p>
-<p>容器也是多层存储,以镜像为基础层,在其基础上加一层作为容器运行时的存储层</p>
-<ul>
-<li>创建镜像的两个方法<ul>
-<li>手动修改容器内容,然后docker commit  提交容器为新的镜像</li>
-<li>通过在dockerfile中定义一系列的命令和参数构成的脚本,然后这些命令应用于基础镜像,依次添加层,最后生成一个新的镜像。极大的简化了部署工作。</li>
-</ul>
-</li>
-</ul>
-<p>docker不是虚拟机的概念,虚拟机里的程序运行,基本上都是在后台运行,利用systemctl运行,但是容器内没有后台进程的概念,必须在前台运行。</p>
-<p>容器就是为了主进程而存在的,主进程如果退出了,容器也就失去意义，自动退出</p>
-<h1 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h1><p>CMD systemctl start nginx</p>
-<p>这样的写法是错误的,容器会立即退出</p>
-<p>因为systemctl start nginx是希望以守卫进程形式启动nginx,且CMD命令会转化为</p>
-<p>CMD[“sh”,”-c”,”systemctl start nginx”]</p>
-<p>这样的命令主进程是sh解释器,执行完毕后立即结束了,因此容器也就退出了。</p>
-<p>因此正确的做法应该是CMD[“nginx”,”-g”,”daemon off;”]</p>
-<ul>
-<li><p>CONTAINER ID:每个容器的唯一标识符号,自动生成。类似于数据库中的主键</p>
-</li>
-<li><p>IMAGE: 创建容器使用的镜像名称</p>
-</li>
-<li><p>COMMAND：运行容器时的命令</p>
-</li>
-<li><p>CREATED: 容器创建的时间</p>
-</li>
-<li><p>STATUS：容器的运行状态, Up 8 months指容器已运行8个月</p>
-<ul>
-<li>created(已创建)</li>
-<li>restarting(重启中)</li>
-<li>running(运行中)</li>
-<li>removing(迁移中)</li>
-<li>paused(暂停)</li>
-<li>exited(停止)</li>
-<li>dead(死亡)</li>
-</ul>
-</li>
-<li>PORTS：容器开放的端口信息</li>
-<li>NAME：容器的别名,在运行容器执行docker run时可使用 —name进行指定</li>
-<li><img src="../img/image-20230606214318386.png" alt="image-20230606214318386"></li>
-</ul>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">小H</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/0.html">http://example.com/posts/0.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">奇妙妙妙屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/7b64386a.html" title="JAVA教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">JAVA教程</div></div></a></div><div class="next-post pull-right"><a href="/posts/8ead567e.html" title="MongoDB"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MongoDB</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小H</div><div class="author-info__description">个人博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker"><span class="toc-number">1.</span> <span class="toc-text">Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF"><span class="toc-number">1.1.</span> <span class="toc-text">Docker 容器技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2"><span class="toc-number">1.2.</span> <span class="toc-text">Docker 安装部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text">Docker 常用指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-number">1.4.</span> <span class="toc-text">Dockerfile的参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.5.</span> <span class="toc-text">Dockerfile的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-number">1.5.0.0.0.1.</span> <span class="toc-text">容器在运行时，应该保证在存储层不写入任何数据,运行在容器内产生的数据,我们推荐是挂载,写入到宿主机，进行维护</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text">例:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BE%8B-1"><span class="toc-number">3.</span> <span class="toc-text">例:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">提示：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A-1"><span class="toc-number">5.</span> <span class="toc-text">提示：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile%E7%9A%84%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86"><span class="toc-number">5.1.</span> <span class="toc-text">Dockerfile的底层原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BE%8B%E5%A6%82%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">例如：</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/92377514.html" title="SpringMvc基础">SpringMvc基础</a><time datetime="2023-08-24T08:47:59.118Z" title="发表于 2023-08-24 16:47:59">2023-08-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/0.html" title="SpringBoot基础">SpringBoot基础</a><time datetime="2023-08-24T08:47:37.854Z" title="发表于 2023-08-24 16:47:37">2023-08-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/d607e27b.html" title="Spring基础">Spring基础</a><time datetime="2023-08-24T08:47:11.750Z" title="发表于 2023-08-24 16:47:11">2023-08-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/0.html" title="Redis教程">Redis教程</a><time datetime="2023-08-24T08:46:32.408Z" title="发表于 2023-08-24 16:46:32">2023-08-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/70c0ba43.html" title="Netty核心教程">Netty核心教程</a><time datetime="2023-08-24T08:45:51.875Z" title="发表于 2023-08-24 16:45:51">2023-08-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 小H</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="1708664797" data-server="tencent" data-type="playlist" data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true"hex></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script async src="/js/ali_font.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">slect index  /*可以选择操作的数据库 redis没有数据表的概念但是又数据库的概念*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; set name zhangsan  /*设置key-value成功返回OK*/</span><br><span class="line">OK</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; get name  /*获得key对应的value如果key为空返回(nil)*/</span><br><span class="line">&quot;zhangsan&quot;</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; mset age 18 address shanghai  /*可以一次性添加多个属性和值*/</span><br><span class="line">OK</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; get age /*可以获得单个属性*/</span><br><span class="line">&quot;18&quot;</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; mget name age address /*可以获得多个属性 如果其中有个对应的key不存在返回(nil)*/</span><br><span class="line">1) &quot;zhangsan&quot;</span><br><span class="line">2) &quot;18&quot;</span><br><span class="line">3) &quot;shanghai&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 style="color:red">操作Hash</h3>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; hset user name zhangsan   </span><br><span class="line">(integer) 1</span><br><span class="line">/*插入hash类型的值   user代表redis的key  name代表hash的可以 zhangsan代表 hash的值  成功后返回插入成功的记录数*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; hget user name</span><br><span class="line">&quot;zhangsan&quot;</span><br><span class="line">/*获得 redis key下  hash key 所对应的值没有返回(nil)*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; hmset user age 18 address sichuan</span><br><span class="line">OK</span><br><span class="line">/*表示在redis key user下插入 hash key age与address 并插入值*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; hmget user age address name</span><br><span class="line">1) &quot;18&quot;</span><br><span class="line">2) &quot;sichuan&quot;</span><br><span class="line">3) &quot;zhangsan&quot;</span><br><span class="line">/*表示在redis key user下获得 hash key name、age与address的值  如果没有返回(nil)*/</span><br></pre></td></tr></table></figure>
+<h3 style="color:red">操作List</h3>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; lpush students zhangsan lisi wangwu zhaoliu</span><br><span class="line">(integer) 4</span><br><span class="line">/*从链表的左边进行添加内容*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; rpush students sanzhang sili wuwang liuzhao</span><br><span class="line">(integer) 8</span><br><span class="line">/*从链表的右边边进行添加内容*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; lrange students 0 7</span><br><span class="line">/*获取链表中的值 0代表开始位置 7代表结束位置   redis中list下标起始值默认为0 lrange 中l表示list而不是从左边开始*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; llen students</span><br><span class="line">(integer) 8</span><br><span class="line">/*获取链表的长度*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; lrem students  3 lisi</span><br><span class="line">(integer) 3</span><br><span class="line">/*删除链表中前三个lisi 可以大于链表中存在的数量 删除了几条就返回删除的数量*/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 style="color:red">操作Set</h3>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; sadd letters  aaa bbb ccc ddd eee fff</span><br><span class="line">(integer) 6</span><br><span class="line">/*插入Set内容 插入顺序和显示顺序无关*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; scard letters</span><br><span class="line">(integer) 6</span><br><span class="line">/*查看Set集合数量*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; smembers letters</span><br><span class="line">1) &quot;bbb&quot;</span><br><span class="line">2) &quot;ddd&quot;</span><br><span class="line">3) &quot;ccc&quot;</span><br><span class="line">4) &quot;fff&quot;</span><br><span class="line">5) &quot;eee&quot;</span><br><span class="line">6) &quot;aaa&quot;</span><br><span class="line">/*展示集合中的内容*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; srem letters aaa bbb ccc </span><br><span class="line">(integer) 3</span><br><span class="line">/*删除其中的key 成功几条就返回成功的条数*/</span><br></pre></td></tr></table></figure>
+<h3 style="color:red">操作Sorted Set</h3>
+
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; zadd students1 1 zhangsan 4 wangwu 2 zhaoliu 10 tianqi</span><br><span class="line">(integer) 4</span><br><span class="line">/*插入数据前需要放入一个排序的权重  如果权重相同，那就插入顺序靠后的排在前面*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; zcard students1</span><br><span class="line">(integer) 4</span><br><span class="line">/*获得集合长度*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; zrange students1 0 3</span><br><span class="line">1) &quot;zhangsan&quot;</span><br><span class="line">2) &quot;zhaoliu&quot;</span><br><span class="line">3) &quot;wangwu&quot;</span><br><span class="line">4) &quot;tianqi&quot;</span><br><span class="line">/*和List类型 从多少开始到多少结束*/</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; zrem students1 zhaoliu</span><br><span class="line">(integer) 1</span><br><span class="line">/*溢出其中的zhaoliu 由于不可以重复所以只删除一条*/</span><br></pre></td></tr></table></figure>
+<h3 style="color:red">通用Redis-cli的命令</h3>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; set cart:user01:ietm01 apple</span><br><span class="line">OK</span><br><span class="line">/*树形目录插入内容*/</span><br></pre></td></tr></table></figure>
+<p><img src="../img/image-20230610152432450.png" alt="image-20230610152432450"></p>
+<p><div style="width:1000px;height:150px;color:red">
+Redis有四个不同的命令可以用于设置键的生存时间(键可以存在多久)或过期时间(键什么时候会被删除):<br>
+EXPIRE  key tt1 :用于将键key的生存时间设置为tt1秒。<br>
+PEXPIRE  key tt1' :用于将键key的生存时间设置为tt1秒。<br>
+EXPIREAT key  timestamp :用于将键key的过期时间设置为 timestamp所指定的秒数时间戳。<br>
+PEXPIREAT key  timestamp :用于将键key的过期时间设置为 timestamp所指定的毫秒数时间戳。<br>
+TTL :获取的值为-1说明此key没有设置有效期，当值为-2时证明过了有效期。<br>
+</div></p>
+<h3 id="Java操作Redis"><a href="#Java操作Redis" class="headerlink" title="Java操作Redis"></a>Java操作Redis</h3><p>SpringBoot导入了NoSql依赖中的Redis1.x的版本默认采用的连接技术是Jedis,2.0以上的版本默认连接池是Lettuc。</p>
+<p>Nedis是线程安全的,Jedis线程不安全,因为在多个线程共享一个实例,所以他是线程不安全的，要想在多线程使用Jedis就必须要用到线程池。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">redis:</span></span><br><span class="line"><span class="comment">#Redis服务器地址</span></span><br><span class="line">		<span class="attr">host:</span> <span class="number">192</span><span class="string">.</span> <span class="number">168.10</span><span class="number">.100</span></span><br><span class="line"><span class="comment">#Redis服务器端口</span></span><br><span class="line">		<span class="attr">port:</span> <span class="number">6379</span></span><br><span class="line"><span class="comment">#Redis服务器密码</span></span><br><span class="line">		<span class="attr">password:</span> <span class="string">root</span></span><br><span class="line"><span class="comment">#选择哪个库，默认0库</span></span><br><span class="line">		<span class="attr">database:</span> <span class="number">0</span></span><br><span class="line"><span class="comment">#连接超时时间</span></span><br><span class="line">		<span class="attr">timeout:</span> <span class="string">10000ms</span></span><br><span class="line">	<span class="attr">jedis:</span></span><br><span class="line">		<span class="attr">pool:</span></span><br><span class="line"><span class="comment">#最大连接数，默认8</span></span><br><span class="line">			<span class="attr">max-active:</span> <span class="number">1024</span></span><br><span class="line"><span class="comment">#最大连接阻塞等待时间，单位毫秒，默认-1ms</span></span><br><span class="line">			<span class="attr">max-wait:</span> <span class="string">10000ms</span></span><br><span class="line"><span class="comment">#最大空闲连接，默认8</span></span><br><span class="line">			<span class="attr">max-idle:</span> <span class="number">200</span></span><br><span class="line"><span class="comment">#最小空闲连接，默认0</span></span><br><span class="line">			<span class="attr">min-idle:</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p>bgsave rdb aof  大于百分之不可用  集群超过50%就不可用了   主从 读写分离  哨兵机制  主备切换  sentinel 哨兵</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">小H</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/0.html">http://example.com/posts/0.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">奇妙妙妙屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://w.wallhaven.cc/full/x6/wallhaven-x6drvo.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/d607e27b.html" title="Spring基础"><img class="cover" src="https://w.wallhaven.cc/full/9d/wallhaven-9d9g38.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Spring基础</div></div></a></div><div class="next-post pull-right"><a href="/posts/70c0ba43.html" title="Netty核心教程"><img class="cover" src="https://w.wallhaven.cc/full/1p/wallhaven-1pg96v.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Netty核心教程</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小H</div><div class="author-info__description">个人博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis"><span class="toc-number">1.</span> <span class="toc-text">Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">Redis是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.2.</span> <span class="toc-text">关系型数据库与非关系型数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis-cli%E6%93%8D%E4%BD%9CRedis"><span class="toc-number">1.3.</span> <span class="toc-text">Redis-cli操作Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.1.</span> <span class="toc-text">操作String</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.2.</span> <span class="toc-text">操作Hash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.3.</span> <span class="toc-text">操作List</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.4.</span> <span class="toc-text">操作Set</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.5.</span> <span class="toc-text">操作Sorted Set</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.6.</span> <span class="toc-text">通用Redis-cli的命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java%E6%93%8D%E4%BD%9CRedis"><span class="toc-number">1.3.7.</span> <span class="toc-text">Java操作Redis</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/92377514.html" title="SpringMvc基础"><img src="https://w.wallhaven.cc/full/m3/wallhaven-m3g6o1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringMvc基础"/></a><div class="content"><a class="title" href="/posts/92377514.html" title="SpringMvc基础">SpringMvc基础</a><time datetime="2023-08-24T08:47:59.118Z" title="发表于 2023-08-24 16:47:59">2023-08-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/a8fdf5f8.html" title="SpringBoot基础"><img src="https://w.wallhaven.cc/full/o5/wallhaven-o56vom.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot基础"/></a><div class="content"><a class="title" href="/posts/a8fdf5f8.html" title="SpringBoot基础">SpringBoot基础</a><time datetime="2023-08-24T08:47:37.854Z" title="发表于 2023-08-24 16:47:37">2023-08-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d607e27b.html" title="Spring基础"><img src="https://w.wallhaven.cc/full/9d/wallhaven-9d9g38.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Spring基础"/></a><div class="content"><a class="title" href="/posts/d607e27b.html" title="Spring基础">Spring基础</a><time datetime="2023-08-24T08:47:11.750Z" title="发表于 2023-08-24 16:47:11">2023-08-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/0.html" title="Redis教程"><img src="https://w.wallhaven.cc/full/x6/wallhaven-x6drvo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Redis教程"/></a><div class="content"><a class="title" href="/posts/0.html" title="Redis教程">Redis教程</a><time datetime="2023-08-24T08:46:32.408Z" title="发表于 2023-08-24 16:46:32">2023-08-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/70c0ba43.html" title="Netty核心教程"><img src="https://w.wallhaven.cc/full/1p/wallhaven-1pg96v.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Netty核心教程"/></a><div class="content"><a class="title" href="/posts/70c0ba43.html" title="Netty核心教程">Netty核心教程</a><time datetime="2023-08-24T08:45:51.875Z" title="发表于 2023-08-24 16:45:51">2023-08-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 小H</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="1708664797" data-server="tencent" data-type="playlist" data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true"hex></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script async src="/js/ali_font.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
 for(var i = 0;i<arr.length;i++){
     arr[i].classList.add('wow');
     arr[i].classList.add('animate__zoomIn');
